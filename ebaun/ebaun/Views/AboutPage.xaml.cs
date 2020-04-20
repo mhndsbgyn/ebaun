@@ -11,7 +11,7 @@ namespace ebaun.Views
         public AboutPage()
         {
             InitializeComponent();
-            // Proje içine atılmış repositoryde değişiklik yapıp pushluyorum
+            // Proje içine atılmış repositoryde değişiklik yapıp pushluyorumuuum
         }
     }
 }
