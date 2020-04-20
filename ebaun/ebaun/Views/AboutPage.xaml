@@ -4,8 +4,8 @@
              x:Class="ebaun.Views.AboutPage"
              xmlns:vm="clr-namespace:ebaun.ViewModels"
              Title="{Binding Title}">
-    
-    <ContentPage.BindingContext> 
+
+    <ContentPage.BindingContext>
         <vm:AboutViewModel />
     </ContentPage.BindingContext>
     
