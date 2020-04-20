@@ -15,6 +15,7 @@ namespace ebaun.Views
 
             //buda benden
             //basak kendisi deniyor
+            //kendi mailini deneyen başakç
         }
     }
 }
