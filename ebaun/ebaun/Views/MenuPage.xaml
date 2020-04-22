@@ -10,7 +10,7 @@
                 <DataTemplate>
                     <ViewCell Tapped="ViewCell_Tapped">
                         <Grid Padding="10">
-                            <Label Text="{Binding Title}" FontSize="20"  TextColor="#006f68"/>
+                            <Label Text="{Binding Title}" FontSize="20"  TextColor="#006f68" />
                         </Grid>
                     </ViewCell>
                 </DataTemplate>

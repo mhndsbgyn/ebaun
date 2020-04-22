@@ -12,7 +12,7 @@ namespace ebaun.Views
     {
         MainPage RootPage { get => Application.Current.MainPage as MainPage; }
         List<HomeMenuItem> menuItems;
-        List<HomeMenuItem> lastCell;
+       
 
        
         public MenuPage()
@@ -37,6 +37,7 @@ namespace ebaun.Views
                     return;
 
                 var id = (int)((HomeMenuItem)e.SelectedItem).Id;
+
                 await RootPage.NavigateFromMenu(id);
             };
         }
@@ -44,7 +45,7 @@ namespace ebaun.Views
       
             private void ViewCell_Tapped(object sender, System.EventArgs e)
             {
-              
+          
            
         }
     }

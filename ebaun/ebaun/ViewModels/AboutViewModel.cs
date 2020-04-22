@@ -9,9 +9,9 @@ namespace ebaun.ViewModels
     {
         public AboutViewModel()
         {
-            Title = "About";
+            Title = "Hakkında";
 
-            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://xamarin.com/platform")));
+            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://balikesir.edu.tr")));
         }
 
         public ICommand OpenWebCommand { get; }

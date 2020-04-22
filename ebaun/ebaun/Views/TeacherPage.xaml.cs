@@ -19,8 +19,8 @@ namespace ebaun.Views
 
             Item = new Item
             {
-                Text = "Item name",
-                Description = "This is an item description."
+               Ders_adi = "Ders Adı",
+               Aciklama = "Açıklama"
             };
 
             BindingContext = this;

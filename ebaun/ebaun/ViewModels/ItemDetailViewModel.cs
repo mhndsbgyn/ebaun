@@ -9,7 +9,7 @@ namespace ebaun.ViewModels
         public Item Item { get; set; }
         public ItemDetailViewModel(Item item = null)
         {
-            Title = item?.Text;
+            Title = item?.Ders_adi;
             Item = item;
         }
     }

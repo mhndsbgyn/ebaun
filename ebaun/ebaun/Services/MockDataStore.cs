@@ -15,12 +15,12 @@ namespace ebaun.Services
             items = new List<Item>();
             var mockItems = new List<Item>
             {
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Web Tasarım", Description="Ders İptaldir arkadaşlar" },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Matematik", Description="Ders İptal" },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Programlama", Description="Ders İptal" },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Java", Description="Ders İptal." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Tarih", Description="Ders İptal." },
-                new Item { Id = Guid.NewGuid().ToString(), Text = "Görsel Programlama", Description="Ders İptal." },
+                new Item { Id = Guid.NewGuid().ToString(), Ders_adi = "Web Tasarım", Aciklama="Ders İptaldir arkadaşlar" ,Tarih=DateTime.Now , Egitmen_adi = "Hüseyin Güneş"  },
+                new Item { Id = Guid.NewGuid().ToString(), Ders_adi = "Matematik", Aciklama="Ders İptal edilebilir benden haber ebkleyin" , Tarih=DateTime.Now , Egitmen_adi = "Recep " },
+                new Item { Id = Guid.NewGuid().ToString(), Ders_adi = "Programlama", Aciklama="Ders İptal" , Tarih=DateTime.Now , Egitmen_adi = "Gültekin Kuvat" },
+                new Item { Id = Guid.NewGuid().ToString(), Ders_adi = "Java", Aciklama="Dersin ikinci yarısında çıkanlar yok yazıldı.", Tarih=DateTime.Now , Egitmen_adi = "Kamil Topal" },
+                new Item { Id = Guid.NewGuid().ToString(), Ders_adi = "PHP", Aciklama="Öğleden sonraki ders iptal.", Tarih=DateTime.Now , Egitmen_adi = "Hüseyin Güneş" },
+                new Item { Id = Guid.NewGuid().ToString(), Ders_adi = "Görsel Programlama", Aciklama="Ders 15 dk sonra başlayacak.",Tarih=DateTime.Now , Egitmen_adi = "Gültekin Kuvat" },
             };
 
             foreach (var item in mockItems)
