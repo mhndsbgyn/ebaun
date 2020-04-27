@@ -11,6 +11,10 @@ namespace ebaun
 
         public App()
         {
+          Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense("MjQ1NzI1QDMxMzgyZTMxMmUzME5VdjFOWGZqU1VENC9KMnBxVTVYUCt3bWZJWkw0ZGoxM2F4N0xrZ0M5Y0E9");
+
+
+
             InitializeComponent();
 
 

@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-
+using Syncfusion.SfDataGrid.XForms;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
+using ebaun.ViewModels;
 using ebaun.Models;
 
 namespace ebaun.Views
@@ -11,30 +11,32 @@ namespace ebaun.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SettingsPage : ContentPage
     {
-        public Item Item { get; set; }
+        ClassesViewModel viewModel;
+   
 
+        public SettingsPage(ClassesViewModel viewModel)
+        {
+            InitializeComponent();
+            BindingContext = this.viewModel = viewModel;
+
+
+        }
         public SettingsPage()
         {
             InitializeComponent();
 
-            Item = new Item
+            var classes = new Classes
             {
-               Ders_adi = "Item name",
-                Aciklama = "This is an item description."
+                Ders_adi = "Item 1",
+                Egitmen_adi = "This is an item description."
             };
 
-            BindingContext = this;
+            viewModel = new ClassesViewModel(classes);
+            BindingContext = viewModel;
+
         }
 
-        async void Save_Clicked(object sender, EventArgs e)
-        {
-            MessagingCenter.Send(this, "AddItem", Item);
-            await Navigation.PopModalAsync();
-        }
+      
 
-        async void Cancel_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PopModalAsync();
-        }
     }
 }
