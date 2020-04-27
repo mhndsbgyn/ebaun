@@ -2,14 +2,24 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ebaun.Views.MenuPage"
-             Title="Menu">
+             xmlns:sfavatar="clr-namespace:Syncfusion.XForms.AvatarView;assembly=Syncfusion.Core.XForms"
+             Title="Menu"> 
+   
     <StackLayout VerticalOptions="FillAndExpand">
+      
+            <Grid>
+            <sfavatar:SfAvatarView ContentType="Default"
+                           ImageSource="xamarin_logo.png"
+                           HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" 
+                          BorderColor="white" />
+            </Grid>
+    
         <ListView x:Name="ListViewMenu"
-                    HasUnevenRows="True">
+                    HasUnevenRows="True" >
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell Tapped="ViewCell_Tapped">
-                        <Grid Padding="10">
+                        <Grid >
                             <Label Text="{Binding Title}" FontSize="20"  TextColor="#006f68" />
                         </Grid>
                     </ViewCell>

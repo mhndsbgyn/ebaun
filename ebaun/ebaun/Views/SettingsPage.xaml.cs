@@ -27,8 +27,8 @@ namespace ebaun.Views
 
             var classes = new Classes
             {
-                Ders_adi = "Item 1",
-                Egitmen_adi = "This is an item description."
+                Ders_adi = "web",
+                Egitmen_adi = "herhangibiri"
             };
 
             viewModel = new ClassesViewModel(classes);
@@ -36,7 +36,15 @@ namespace ebaun.Views
 
         }
 
-      
+        async void Cancel_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PopModalAsync();
+        }
 
+        async void Save_Clicked(object sender, EventArgs e)
+        {
+           
+            await Navigation.PopModalAsync();
+        }
     }
 }

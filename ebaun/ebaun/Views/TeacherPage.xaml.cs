@@ -11,16 +11,16 @@ namespace ebaun.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TeacherPage : ContentPage
     {
-        public Item Item { get; set; }
+        public Teacher Item { get; set; }
 
         public TeacherPage()
         {
             InitializeComponent();
 
-            Item = new Item
+            Item = new Teacher
             {
-               Ders_adi = "Ders Adı",
-               Aciklama = "Açıklama"
+               Ad = "E-mail",
+               Sifre = "Şifre"
             };
 
             BindingContext = this;
