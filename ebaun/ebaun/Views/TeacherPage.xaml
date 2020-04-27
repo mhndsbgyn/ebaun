@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ebaun.Views.TeacherPage"
+             xmlns:dataForm="clr-namespace:Syncfusion.XForms.DataForm;assembly=Syncfusion.SfDataForm.XForms"
              Title="Eğitmen Giriş Sayfası">
     
     <ContentPage.ToolbarItems>
@@ -16,11 +17,8 @@
     </ContentPage.ToolbarItems>
     
     <ContentPage.Content>
-        <StackLayout Spacing="20" Padding="15">
-            <Label Text="E-mail" FontSize="Medium" />
-            <Entry Text="{Binding Item.Ad}" FontSize="Small" />
-            <Label Text="Şifre" FontSize="Medium" />
-            <Editor Text="{Binding Item.Sifre}" FontSize="Small" Margin="0" />
-        </StackLayout>
+        <dataForm:SfDataForm x:Name="dataForm" LayoutOptions="TextInputLayout"
+						 DataObject="{Binding Item}"/>
+        
     </ContentPage.Content>
 </ContentPage>

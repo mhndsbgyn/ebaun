@@ -16,6 +16,7 @@
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.1.0.42" />
     <PackageReference Include="Syncfusion.Xamarin.DataSource" Version="18.1.0.42" />
     <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBackdrop" Version="18.1.0.42" />
     <PackageReference Include="Syncfusion.Xamarin.SfDataForm" Version="18.1.0.42" />
     <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="18.1.0.42" />
     <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="18.1.0.42" />
