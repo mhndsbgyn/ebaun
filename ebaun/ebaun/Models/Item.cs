@@ -9,6 +9,6 @@ namespace ebaun.Models
         public string Aciklama { get; set; }
         public DateTime Tarih { get; set; }
         public string Egitmen_adi { get; set; }
-
+        public int Sinif { get; set; }
     }
 }

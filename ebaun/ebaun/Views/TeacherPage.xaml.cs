@@ -20,7 +20,7 @@ namespace ebaun.Views
             Item = new Teacher
             {
                Ad = "E-mail",
-               Sifre = "Şifre"
+               Password = "Şifre"
             };
 
             BindingContext = this;
@@ -35,6 +35,15 @@ namespace ebaun.Views
         async void Cancel_Clicked(object sender, EventArgs e)
         {
             await Navigation.PopModalAsync();
+        }
+
+        private void DataForm_AutoGeneratingDataFormItem(object sender, Syncfusion.XForms.DataForm.AutoGeneratingDataFormItemEventArgs e)
+        {
+            if (e.DataFormItem != null)
+            {
+                if (e.DataFormItem.Name == "Id")
+                    e.DataFormItem.IsVisible = false;
+            }
         }
     }
 }

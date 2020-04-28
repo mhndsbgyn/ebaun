@@ -13,6 +13,7 @@
   <ItemGroup>
     <PackageReference Include="Plugin.Share" Version="7.1.1" />
     <PackageReference Include="Syncfusion.Licensing" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.1.0.42" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.1.0.42" />
     <PackageReference Include="Syncfusion.Xamarin.DataSource" Version="18.1.0.42" />
     <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete" Version="18.1.0.42" />
@@ -20,6 +21,8 @@
     <PackageReference Include="Syncfusion.Xamarin.SfDataForm" Version="18.1.0.42" />
     <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="18.1.0.42" />
     <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfKanban" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="18.1.0.42" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.5.0.657" />  
   </ItemGroup>
