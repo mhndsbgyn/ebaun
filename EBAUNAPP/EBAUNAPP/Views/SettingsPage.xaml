@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"  
+             x:Class="ebaun.Views.SettingsPage"
+              xmlns:autocomplete="clr-namespace:Syncfusion.SfAutoComplete.XForms;assembly=Syncfusion.SfAutoComplete.XForms"
+              xmlns:ListCollection="clr-namespace:System.Collections.Generic;assembly=netstandard"
+
+             xmlns:local="clr-namespace:SettingsPage"
+             Title="{Binding Title}"
+             >
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="İptal" Clicked="Cancel_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="cancel.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+        <ToolbarItem Text="Kaydet" Clicked="Save_Clicked">
+            <ToolbarItem.Icon>
+                <OnPlatform x:TypeArguments="FileImageSource">
+                    <On Platform="UWP" Value="save.png"/>
+                </OnPlatform>
+            </ToolbarItem.Icon>
+        </ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <StackLayout VerticalOptions="Start" 
+                 HorizontalOptions="Start" 
+                 Padding="30">
+        <autocomplete:SfAutoComplete x:Name="autoComplete" 
+                                     EnableAutoSize="True" MultiSelectMode="Token" TokensWrapMode="Wrap"
+                                    Watermark="Ders Adını Yazın"
+                                     ItemPadding="20,10,0,0"
+                                     NoResultsFoundText="Bulunamadı"
+                                     IsSelectedItemsVisibleInDropDown="false">
+            <autocomplete:SfAutoComplete.AutoCompleteSource>
+                <ListCollection:List x:TypeArguments="x:String">
+                    <x:String>Matematik</x:String>
+                    <x:String>Ayrık Matematik</x:String>
+                    <x:String>Algoritma Analizi</x:String>
+                    <x:String>Web Tasarım</x:String>
+                    <x:String>Tarih</x:String>
+                    <x:String>Programlama</x:String>
+                    <x:String>Java</x:String>
+                    <x:String>Görsel Programlama</x:String>
+                    <x:String>Bitirme Projesi</x:String>
+                    <x:String>İş Güvenliği</x:String>
+                    <x:String>Girişimcilik</x:String>
+                    <x:String>Elektronik Devreler</x:String>
+                    <x:String>Bilgisayar Organizasyonu</x:String>
+                </ListCollection:List>
+            </autocomplete:SfAutoComplete.AutoCompleteSource>
+        </autocomplete:SfAutoComplete>
+    </StackLayout>
+
+</ContentPage>
+   

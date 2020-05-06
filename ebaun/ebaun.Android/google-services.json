@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "574902461498",
+    "firebase_url": "https://ebaun-e30ac.firebaseio.com",
+    "project_id": "ebaun-e30ac",
+    "storage_bucket": "ebaun-e30ac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:574902461498:android:94c5550e41e31e5580c103",
+        "android_client_info": {
+          "package_name": "com.duyuru.ebaun"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "574902461498-2njuslpo43lsdd4echvn6ivn81bq8amn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB5hPJ58M57huCdtWDeY8J_p0j6Yh1TgT8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "574902461498-2njuslpo43lsdd4echvn6ivn81bq8amn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

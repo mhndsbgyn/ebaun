@@ -3,30 +3,58 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 using ebaun.Models;
 using ebaun.Views;
 using ebaun.ViewModels;
+using System.Collections.ObjectModel;
+using Plugin.FirebasePushNotification;
+using ebaun.Services;
 
 namespace ebaun.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TeacherAddPage : ContentPage
     {
-        ItemsViewModel viewModel;
-      
+  
+           ItemsViewModel viewModel;
+        public Item Item { get; set; }
+       
         public TeacherAddPage()
         {
-          
 
-        InitializeComponent();
-          
+            InitializeComponent();
+
+            BindingContext = this;
+            Item = new Item
+            {
+                Egitmen_adi = "İsminiz",
+                Ders_adi="Ders Adi",
+                Aciklama="Duyuru Açıklaması",
+                Tarih="../../..",
+                Sinif="1,2,3,4 ",
+                
+            };
+            BindingContext = Item = new Item();
             BindingContext = viewModel = new ItemsViewModel();
-        
+
         }
-        
+        async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
+        {
+            var item = args.SelectedItem as Item;
+            if (item == null)
+                return;
+
+            await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+
+            // Manually deselect item.
+            ItemsListView.SelectedItem = null;
+        }
+
+
 
         protected override void OnAppearing()
         {
@@ -52,7 +80,44 @@ namespace ebaun.Views
                
                 e.Column.TextAlignment = TextAlignment.Center;
             }
-          
+            else if (e.Column.MappingName == "Aciklama")
+            {
+
+                e.Column.TextAlignment = TextAlignment.Center;
+            }
+            else if (e.Column.MappingName == "Tarih")
+            {
+
+                e.Column.TextAlignment = TextAlignment.Center;
+            }
+            else if (e.Column.MappingName == "Sinif")
+            {
+
+                e.Column.TextAlignment = TextAlignment.Center;
+            }
+
+        }
+
+        private void DataForm_AutoGeneratingDataFormItem(object sender, Syncfusion.XForms.DataForm.AutoGeneratingDataFormItemEventArgs e)
+        {
+            if (e.DataFormItem != null)
+            {
+                if (e.DataFormItem.Name == "Id")
+                    e.DataFormItem.IsVisible = false;
+            }
+        }
+
+     
+
+
+      
+
+        private async void SfButton_Clicked(object sender, EventArgs e)
+        {
+            using (Acr.UserDialogs.UserDialogs.Instance.Loading("Mesaj gönderiliyor..."))
+            {
+                await Notificator.SendMessage("Programlama","Yeni Ders Eklendi","Dersiniz eklendi..");
+            }
         }
     }
 }

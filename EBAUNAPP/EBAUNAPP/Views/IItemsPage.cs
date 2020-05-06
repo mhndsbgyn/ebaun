@@ -1,4 +1,4 @@
-﻿namespace ebaun.Views
+﻿namespace EBAUNAPP.Views
 {
     public interface IItemsPage
     {

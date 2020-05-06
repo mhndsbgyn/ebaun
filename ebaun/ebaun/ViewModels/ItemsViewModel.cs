@@ -8,7 +8,6 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ebaun.Models;
 using ebaun.Views;
-using Syncfusion.SfKanban.XForms;
 namespace ebaun.ViewModels
 {
     public class ItemsViewModel : BaseViewModel

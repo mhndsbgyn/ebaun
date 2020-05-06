@@ -32,7 +32,7 @@
                                      EnableAutoSize="True" MultiSelectMode="Token" TokensWrapMode="Wrap"
                                     Watermark="Ders Adını Yazın"
                                      ItemPadding="20,10,0,0"
-                                     NoResultsFoundText="Bulunamadı"
+                                     NoResultsFoundText="Bulunamadı"                                     
                                      IsSelectedItemsVisibleInDropDown="false">
             <autocomplete:SfAutoComplete.AutoCompleteSource>
                 <ListCollection:List x:TypeArguments="x:String">

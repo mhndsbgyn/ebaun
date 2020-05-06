@@ -5,6 +5,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using ebaun.ViewModels;
 using ebaun.Models;
+using Plugin.FirebasePushNotification;
 
 namespace ebaun.Views
 {
@@ -18,9 +19,24 @@ namespace ebaun.Views
         {
             InitializeComponent();
             BindingContext = this.viewModel = viewModel;
+            autoComplete.ValueChanged += AutoComplete_ValueChanged;
+        }
 
+        private void AutoComplete_ValueChanged(object sender, Syncfusion.SfAutoComplete.XForms.ValueChangedEventArgs e)
+        {
 
         }
+
+        private void AutoComplete_SelectionChanged(object sender, Syncfusion.SfAutoComplete.XForms.SelectionChangedEventArgs e)
+        {
+            List<string> removed = e.RemovedItems as List<string>;
+            List<string> added = e.AddedItems as List<string>;
+            foreach (string item in removed)
+                CrossFirebasePushNotification.Current.Unsubscribe(item);
+            foreach (string item in added)
+                CrossFirebasePushNotification.Current.Subscribe(item);
+        }
+
         public SettingsPage()
         {
             InitializeComponent();

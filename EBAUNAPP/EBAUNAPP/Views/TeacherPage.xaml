@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ebaun.Views.TeacherPage"
+             xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
+             xmlns:dataForm="clr-namespace:Syncfusion.XForms.DataForm;assembly=Syncfusion.SfDataForm.XForms"
+             Title="Eğitmen Giriş Sayfası">
+    
+    
+    <StackLayout Padding="10" VerticalOptions="Center"> 
+        <dataForm:SfDataForm x:Name="dataForm" LayoutOptions="TextInputLayout"
+						 DataObject="{Binding Item}" AutoGeneratingDataFormItem="DataForm_AutoGeneratingDataFormItem"/>
+        <buttons:SfButton
+                                     HeightRequest="50"
+                                     WidthRequest="150"
+                                     VerticalOptions="Center"
+                                     HorizontalOptions="Center"
+                                     CornerRadius="25"
+                                     HasShadow="True"
+                                     BorderWidth="1"
+                                     BorderColor="Gray"
+                                     BackgroundColor="#006f68"
+                                     ImageSource="teacher.png"
+                                     ShowIcon="True"
+                                     ImageAlignment="End"
+                                     Text="GİRİŞ"/></StackLayout>
+   
+  
+   
+</ContentPage>

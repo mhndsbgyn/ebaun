@@ -9,9 +9,11 @@ namespace ebaun.ViewModels
     {
         public AboutViewModel()
         {
+
             Title = "Hakkında";
 
-            OpenWebCommand = new Command(() => Device.OpenUri(new Uri("https://balikesir.edu.tr")));
+
+
         }
 
         public ICommand OpenWebCommand { get; }

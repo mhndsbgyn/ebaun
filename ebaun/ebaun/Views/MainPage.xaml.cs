@@ -1,6 +1,9 @@
 ﻿using ebaun.Models;
+using Newtonsoft.Json;
+using Plugin.FirebasePushNotification;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -18,6 +21,26 @@ namespace ebaun.Views
             MasterBehavior = MasterBehavior.Popover;
 
             MenuPages.Add((int)MenuItemType.Duyurular, (NavigationPage)Detail);
+
+            FireBase();
+        }
+
+        private void FireBase()
+        {
+            CrossFirebasePushNotification.Current.RegisterForPushNotifications();
+            CrossFirebasePushNotification.Current.UnsubscribeAll();
+            CrossFirebasePushNotification.Current.Subscribe("news");
+            CrossFirebasePushNotification.Current.OnNotificationReceived += Current_OnNotificationReceived;
+            CrossFirebasePushNotification.Current.OnNotificationOpened += (s, p) =>
+            {
+                CrossFirebasePushNotification.Current.ClearAllNotifications();
+            };
+        }
+
+        private void Current_OnNotificationReceived(object source, FirebasePushNotificationDataEventArgs e)
+        {
+            string gelen = JsonConvert.SerializeObject(e.Data);
+            Debug.WriteLine(gelen);
         }
 
         public async Task NavigateFromMenu(int id)

@@ -11,20 +11,45 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Assets\Icons\about.png" />
+    <None Remove="Assets\Icons\news.png" />
+    <None Remove="Assets\Icons\Settings.png" />
+    <None Remove="Assets\Icons\teacher.png" />
+    <None Remove="Assets\Icons\teachernews.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Assets\Icons\about.png">
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Assets\Icons\news.png" />
+    <EmbeddedResource Include="Assets\Icons\Settings.png" />
+    <EmbeddedResource Include="Assets\Icons\teacher.png" />
+    <EmbeddedResource Include="Assets\Icons\teachernews.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Acr.UserDialogs" Version="7.1.0.442" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Plugin.FirebasePushNotification" Version="3.1.6" />
     <PackageReference Include="Plugin.Share" Version="7.1.1" />
-    <PackageReference Include="Syncfusion.Licensing" Version="18.1.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.1.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.1.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.DataSource" Version="18.1.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete" Version="18.1.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfBackdrop" Version="18.1.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfDataForm" Version="18.1.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="18.1.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfGauge" Version="18.1.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfKanban" Version="18.1.0.42" />
-    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="18.1.0.42" />
+    <PackageReference Include="Syncfusion.Licensing" Version="18.1.0.48" />
+    <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.1.0.48" />
+    <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.1.0.48" />
+    <PackageReference Include="Syncfusion.Xamarin.DataSource" Version="18.1.0.48" />
+    <PackageReference Include="Syncfusion.Xamarin.SfAutoComplete" Version="18.1.0.48" />
+    <PackageReference Include="Syncfusion.Xamarin.SfBackdrop" Version="18.1.0.48" />
+    <PackageReference Include="Syncfusion.Xamarin.SfDataForm" Version="18.1.0.48" />
+    <PackageReference Include="Syncfusion.Xamarin.SfDataGrid" Version="18.1.0.48" />
+    <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="18.1.0.48" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
-    <PackageReference Include="Xamarin.Forms" Version="4.5.0.657" />  
+    <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />  
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Mono.Android">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Microsoft Visual Studio\2017\Community\Common7\IDE\ReferenceAssemblies\Microsoft\Framework\MonoAndroid\v9.0\Mono.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
   <ItemGroup>

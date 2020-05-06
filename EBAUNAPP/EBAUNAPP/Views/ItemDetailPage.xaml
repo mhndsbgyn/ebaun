@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ebaun.Views.ItemDetailPage"
+             Title="{Binding Title}">
+    <StackLayout Spacing="20" Padding="15">
+        <Label Text="Ders Adı:" FontSize="Medium" />
+        <Label Text="{Binding Item.Ders_adi}" FontSize="Small"/>
+        <Label Text="Açıklama:" FontSize="Medium" />
+        <Label Text="{Binding Item.Aciklama}" FontSize="Small"/>
+        <Label Text="Eğitmen Adı:" FontSize="Medium" />
+        <Label Text="{Binding Item.Egitmen_adi}" FontSize="Small"/>
+        <Label Text="Tarih:" FontSize="Medium" />
+        <Label Text="{Binding Item.Tarih}" FontSize="Small"/>
+        
+    </StackLayout>
+</ContentPage>
