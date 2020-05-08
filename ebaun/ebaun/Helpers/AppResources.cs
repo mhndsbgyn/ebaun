@@ -24,6 +24,36 @@ namespace ebaun
             public static Color Light { get { return Color.FromHex("#006f68"); } }
             public static Color Dark { get { return Color.FromHex("#006f68"); } }
         }
-      
-    }
+        public static class DB
+        {
+            public static string Classes = "[ " +
+                                    "    { " +
+                                    "        \"Id\": 5, " +
+                                    "        \"Ders_adi\": matematik " +
+                                    "         \"Egitmen_adi\": recep " +
+                                    "         \"Sinif\": 1 " +
+                                    "    } " +
+                                    "] ";
+
+            public static string News = "[ " +
+                                    "    { " +
+                                   "        \"Id\": 3, " +
+                                    "        \"Ders_adi\": matematik " +
+                                    "         \"Egitmen_adi\": recep " +
+                                    "         \"Sinif\": 1 " +
+                                    "        \"NewsDate\": 23/09/2020 " +
+                                    "         \"Aciklama\": duyuru " +
+                                 
+                                    "    } " +
+                                    "] ";
+            public static string Teacher = "[ " +
+                                    "    { " +
+                                    "        \"Id\": 6, " +           
+                                    "         \"Email\": recep " +
+                                    "         \"Sifre\": 123 " +
+                                    "    }, " +
+                                 
+                                    "] ";
+        }
+        }
 }

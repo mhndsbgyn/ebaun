@@ -33,6 +33,7 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Plugin.FirebasePushNotification" Version="3.1.6" />
     <PackageReference Include="Plugin.Share" Version="7.1.1" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
     <PackageReference Include="Syncfusion.Licensing" Version="18.1.0.48" />
     <PackageReference Include="Syncfusion.Xamarin.Buttons" Version="18.1.0.48" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="18.1.0.48" />
@@ -44,6 +45,11 @@
     <PackageReference Include="Syncfusion.Xamarin.SfTabView" Version="18.1.0.48" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.1" />
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.726" />  
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\App2\App2\ebaun.DLL.csproj" />
+    <ProjectReference Include="..\..\ebaun.DTO\ebaun.DTO\ebaun.DTO.csproj" />
   </ItemGroup>
 
   <ItemGroup>

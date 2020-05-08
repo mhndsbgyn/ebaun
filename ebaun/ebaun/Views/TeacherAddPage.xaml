@@ -4,7 +4,7 @@
              xmlns:backdrop="clr-namespace:Syncfusion.XForms.Backdrop;assembly=Syncfusion.SfBackdrop.XForms"
              x:Class="ebaun.Views.TeacherAddPage"
              xmlns:tabView="clr-namespace:Syncfusion.XForms.TabView;assembly=Syncfusion.SfTabView.XForms"
-             xmlns:sfGrid="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
+             xmlns:syncfusion="clr-namespace:Syncfusion.SfDataGrid.XForms;assembly=Syncfusion.SfDataGrid.XForms"
               xmlns:buttons="clr-namespace:Syncfusion.XForms.Buttons;assembly=Syncfusion.Buttons.XForms"
              xmlns:dataForm="clr-namespace:Syncfusion.XForms.DataForm;assembly=Syncfusion.SfDataForm.XForms"
            xmlns:component="clr-namespace:ebaun.Components"
@@ -23,60 +23,44 @@
         <tabView:SfTabView BackgroundColor="#006f68" VisibleHeaderCount="2" >
             
             
-            
+           
             <tabView:SfTabItem Title="Geçmiş Duyurular" TitleFontColor="White" SelectionColor="White" TitleFontSize="16" >
                 <tabView:SfTabItem.Content>
                     <Grid BackgroundColor="white">
-                    <StackLayout>
+                        <StackLayout VerticalOptions="FillAndExpand">
+                        
+                            <syncfusion:SfDataGrid x:Name="dataGrid" VerticalOptions="FillAndExpand"
+                               ColumnSizer="Star"    
+                                 AutoGenerateColumns="True"
+                               AllowResizingColumn="True"
+                               AllowEditing="True"
+                       SelectionMode="Multiple"    
+                       NavigationMode="Cell" 
+                               ItemsSource="{Binding Items}"
+                                                   
+                                                   >
+                            </syncfusion:SfDataGrid>
 
-                        <ListView x:Name="ItemsListView"
-                ItemsSource="{Binding Items}"
-                VerticalOptions="FillAndExpand"
-                HasUnevenRows="true"
-                RefreshCommand="{Binding LoadItemsCommand}"
-                IsPullToRefreshEnabled="true"
-                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                CachingStrategy="RecycleElement"
-                ItemSelected="OnItemSelected">
-                            <ListView.ItemTemplate>
-                                <DataTemplate>
-                                    <ViewCell>
-                                        <StackLayout Padding="10">
-                                            <Label Text="{Binding Ders_adi}" 
-                                LineBreakMode="NoWrap" 
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                                            <Label Text="{Binding Aciklama}" 
-                                LineBreakMode="NoWrap"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
-                                        </StackLayout>
-                                    </ViewCell>
-                                </DataTemplate>
-                            </ListView.ItemTemplate>
-                        </ListView>
+                        </StackLayout>
 
-                    </StackLayout>
-
-</Grid>
+                    </Grid>
 
 
                 </tabView:SfTabItem.Content>
-                
+
             </tabView:SfTabItem>
-            
-            
-            
-            
-            
-            
+
+
+
+
+
             <tabView:SfTabItem Title="Yeni Duyuru" TitleFontColor="White" SelectionColor="White" TitleFontSize="16">
                 <tabView:SfTabItem.Content>
 
                     <Grid BackgroundColor="White">
                         <StackLayout Spacing="15" Padding="15">
                             <Label Text="Ders Adı" FontSize="Medium" />
-                            <Entry Text="{Binding Item.Ders_adi}" FontSize="Small" />
+                            <Entry Text="{Binding Classes.Ders_adi}" FontSize="Small" />
                             
                             <Label Text="Eğitmen Adı" FontSize="Medium" />
                             <Editor Text="{Binding Item.Egitmen_adi}" FontSize="Small" Margin="0" />

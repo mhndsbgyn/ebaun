@@ -20,25 +20,24 @@ namespace ebaun.Views
     public partial class TeacherAddPage : ContentPage
     {
   
-           ItemsViewModel viewModel;
-        public Item Item { get; set; }
-       
+         ItemsViewModel viewModel;
+        public Classes Item { get; set; }
+        
         public TeacherAddPage()
         {
 
             InitializeComponent();
 
             BindingContext = this;
-            Item = new Item
+            Item = new Classes
             {
                 Egitmen_adi = "İsminiz",
-                Ders_adi="Ders Adi",
-                Aciklama="Duyuru Açıklaması",
-                Tarih="../../..",
+                Ders_adi="Ders Adi", 
                 Sinif="1,2,3,4 ",
                 
             };
-            BindingContext = Item = new Item();
+            dataGrid.AutoGeneratingColumn += GridAutoGeneratingColumns; 
+            BindingContext = Item = new Classes();
             BindingContext = viewModel = new ItemsViewModel();
 
         }
@@ -51,7 +50,7 @@ namespace ebaun.Views
             await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
 
             // Manually deselect item.
-            ItemsListView.SelectedItem = null;
+     
         }
 
 
@@ -63,8 +62,8 @@ namespace ebaun.Views
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
         }
-
-        private void DataMeasureGrid_AutoGeneratingColumn(object sender, Syncfusion.SfDataGrid.XForms.AutoGeneratingColumnEventArgs e)
+       
+        private void GridAutoGeneratingColumns(object sender, Syncfusion.SfDataGrid.XForms.AutoGeneratingColumnEventArgs e)
         {
             if (e.Column.MappingName == "Id" || e.Column.MappingName == "Id")
             {

@@ -23,6 +23,7 @@
                                      ImageSource="teacher.png"
                                      ShowIcon="True"
                                      ImageAlignment="End"
+                                     Clicked="Save_Clicked"
                                      Text="GİRİŞ"/></StackLayout>
    
   

@@ -62,6 +62,9 @@
     <PackageReference Include="Acr.UserDialogs">
       <Version>7.1.0.442</Version>
     </PackageReference>
+    <PackageReference Include="FcmSharp">
+      <Version>3.0.1</Version>
+    </PackageReference>
     <PackageReference Include="Google.Apis.Core">
       <Version>1.45.0</Version>
     </PackageReference>
@@ -73,6 +76,9 @@
     </PackageReference>
     <PackageReference Include="Plugin.FirebasePushNotification">
       <Version>3.1.6</Version>
+    </PackageReference>
+    <PackageReference Include="sqlite-net-pcl">
+      <Version>1.6.292</Version>
     </PackageReference>
     <PackageReference Include="Syncfusion.Xamarin.SfDataGrid">
       <Version>18.1.0.48</Version>

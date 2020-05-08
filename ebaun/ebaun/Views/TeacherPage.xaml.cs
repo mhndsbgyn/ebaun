@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-
-using ebaun.Models;
+using ebaun.DTO;
+using Acr.UserDialogs;
+using Syncfusion.XForms.DataForm;
+using System.Resources;
 
 namespace ebaun.Views
 {
@@ -12,24 +14,51 @@ namespace ebaun.Views
     public partial class TeacherPage : ContentPage
     {
         public Teacher Item { get; set; }
-
+        public TeacherPage(Teacher Item = null)
+        {
+            InitializeComponent();
+            this.Item = Item;
+        }
         public TeacherPage()
         {
             InitializeComponent();
 
             Item = new Teacher
             {
-               Ad = "E-mail",
-               Password = "Şifre"
+               Email = "E-mail",
+               Sifre = "Şifre"
             };
 
             BindingContext = this;
         }
+        protected async override void OnAppearing()
+        {
+            base.OnAppearing();
+    
+            if (Item == null)
+            {
+                using (UserDialogs.Instance.Loading("yükleniyor"))
+                {
+                   Item = await App.Databases.TeacherDataBase.CreateNew();
+                }
+            }
+
+            dataForm.DataObject = Item;
+      
+        }
+
+       
 
         async void Save_Clicked(object sender, EventArgs e)
         {
-            MessagingCenter.Send(this, "AddItem", Item);
-            await Navigation.PopModalAsync();
+            if (dataForm.Validate())
+            {
+                using (UserDialogs.Instance.Loading("ekleniyor"))
+                {
+                    await App.Databases.TeacherDataBase.SaveAsync(Item);
+                }
+                await Navigation.PopToRootAsync();
+            }
         }
 
         async void Cancel_Clicked(object sender, EventArgs e)
